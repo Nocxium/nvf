@@ -20,7 +20,6 @@
         mode = ["n" ];
         action = ":lua require('flash').jump()<CR>";
         silent = true;
-        noremap = false;
         desc = "Jump to word";
       }
       {
