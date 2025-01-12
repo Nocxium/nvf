@@ -3,5 +3,6 @@
   imports = [
     ./custom-vim-packages.nix
     ./test.nix
+    ./keymaps.nix
   ];
 }

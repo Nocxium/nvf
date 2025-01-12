@@ -6,6 +6,11 @@
         package = telescope-file-browser-nvim;
       };
 
+      auto-session = {
+        package = auto-session;
+        setup = "require('auto-session').setup {}";
+      };
+
       neogit = {
         package = neogit;
         setup = "require('neogit').setup {}";
@@ -86,6 +91,7 @@
 
     autocomplete.nvim-cmp.enable = true;
     snippets.luasnip.enable = true;
+    autopairs.nvim-autopairs.enable = true;
 
     git = {
       enable = true;
@@ -97,59 +103,6 @@
       minimap-vim.enable = false;
       codewindow.enable = true; # lighter, faster, and uses lua for configuration
     };
-
-    keymaps = [
-      {
-        key = "<leader>fe";
-        mode = ["n"];
-        action = ":Telescope file_browser<CR>";
-        silent = true;
-        desc = "File Browser";
-      }
-
-      {
-        key = "<leader>fr";
-        mode = ["n"];
-        action = ":Telescope oldfiles<CR>";
-        silent = true;
-        desc = "File Browser";
-      }
-      {
-        key = "s";
-        mode = ["n" ];
-        action = ":lua require('flash').jump()<CR>";
-        silent = true;
-        desc = "Jump to word";
-      }
-      {
-        key = "<C-d>";
-        mode = ["n" ];
-        action = "<cmd><C-d>zz<CR>";
-        silent = true;
-        desc = "center after C-d";
-      }
-      {
-        key = "<C-u>";
-        mode = ["n" ];
-        action = "<cmd><C-u>zz<CR>";
-        silent = true;
-        desc = "center after C-u";
-      }
-      {
-        key = "<C-e>";
-        mode = ["n" ];
-        action = "<cmd><C-u>zz<CR>";
-        silent = true;
-        desc = "center after C-e";
-      }
-      {
-        key = "<leader>ng";
-        mode = ["n" ];
-        action = ":Neogit<CR>";
-        silent = true;
-        desc = "Open Neogit";
-      }
-    ];
 
     binds = {
       whichKey.enable = true;
@@ -238,12 +191,6 @@
       context.enable = true;
     };
 
-    # utility = {
-    #   images = {
-    #     image-nvim.enable = true;
-    #   };
-    # };
-    
     useSystemClipboard = true;
 
     options = {
