@@ -124,21 +124,21 @@
       {
         key = "<C-d>";
         mode = ["n" ];
-        action = "<cmd><C-d>zz";
+        action = "<cmd><C-d>zz<CR>";
         silent = true;
         desc = "center after C-d";
       }
       {
         key = "<C-u>";
         mode = ["n" ];
-        action = "<cmd><C-u>zz";
+        action = "<cmd><C-u>zz<CR>";
         silent = true;
         desc = "center after C-u";
       }
       {
         key = "<C-e>";
         mode = ["n" ];
-        action = "<cmd><C-u>zz";
+        action = "<cmd><C-u>zz<CR>";
         silent = true;
         desc = "center after C-e";
       }
