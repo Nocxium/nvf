@@ -83,6 +83,7 @@
       }) // {
         # Basic Neovim configuration for aarch64-linux
         "aarch64-linux" = {
+          default = mkBasicNeovim "aarch64-linux";  # This allows nix run github:xxxx/nvf#rPi
           rPi = mkBasicNeovim "aarch64-linux";
         };
       };
