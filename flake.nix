@@ -4,22 +4,21 @@
     nvf.url = "github:notashelf/nvf";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    ...
-  } @ inputs:
+  outputs = { self, nixpkgs, ... } @ inputs:
     let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      supportedSystems = [ "x86_64-linux" "aarch64-linux" ]; # Added aarch64-linux for rPi
+      forAllSystems = f: nixpkgs.lib.genAttrs supportedSystems f;
 
       mkNeovimConfig = { 
         isBash ? false,
         isJava ? false,
         isWeb ? false,
         isPython ? false,
-        isLua ? false 
-      }:
+        isLua ? false
+      }: system:
+        let
+          pkgs = import nixpkgs { inherit system; };
+        in
         inputs.nvf.lib.neovimConfiguration {
           inherit pkgs;
           modules = [
@@ -27,7 +26,6 @@
             {
               config.vim = {
                 languages = {
-                  #LANGUAGES
                   bash.enable = isBash;
                   css.enable = isWeb;
                   html.enable = isWeb;
@@ -39,26 +37,31 @@
             }
           ];
         };
+
     in {
-      packages.${system} = {
-        # Default has everything disabled
-        default = (mkNeovimConfig {}).neovim;
-
-        # Each specialized build only enables its specific features
-        bash = (mkNeovimConfig { isBash = true; }).neovim;
-        java = (mkNeovimConfig { isJava = true; }).neovim;
-        web = (mkNeovimConfig { isWeb = true; }).neovim;
-        python = (mkNeovimConfig { isPython = true; }).neovim;
-        lua = (mkNeovimConfig { isLua = true; }).neovim;
-
-        # You could also have a "full" version with everything enabled
+      packages = forAllSystems (system: {
+        default = (mkNeovimConfig {} system).neovim;
+        bash = (mkNeovimConfig { isBash = true; } system).neovim;
+        java = (mkNeovimConfig { isJava = true; } system).neovim;
+        web = (mkNeovimConfig { isWeb = true; } system).neovim;
+        python = (mkNeovimConfig { isPython = true; } system).neovim;
+        lua = (mkNeovimConfig { isLua = true; } system).neovim;
         full = (mkNeovimConfig {
           isBash = true;
           isJava = true;
           isWeb = true;
           isPython = true;
           isLua = true;
-        }).neovim;
-      };
+        } system).neovim;
+
+        # Raspberry Pi specific package
+        rPi = (mkNeovimConfig {
+          isBash = true;
+          isJava = true;
+          isWeb = true;
+          isPython = true;
+          isLua = true;
+        } "aarch64-linux").neovim;
+      });
     };
- }
+}
