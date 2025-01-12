@@ -9,11 +9,8 @@
     ...
   } @ inputs:
     let
-      # List of supported systems
-      supportedSystems = [
-        "x86_64-linux"
-        "aarch64-linux"
-      ];
+      # Only include x86_64-linux since nvf doesn't support aarch64
+      supportedSystems = [ "x86_64-linux" ];
 
       # Helper function to generate attributes for each system
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
@@ -47,19 +44,35 @@
             }
           ];
         };
+
+      # Function to create a basic Neovim configuration for unsupported systems
+      mkBasicNeovim = system:
+        let
+          pkgs = pkgsFor system;
+        in
+        pkgs.neovim.override {
+          configure = {
+            customRC = ''
+              " Basic Neovim configuration for unsupported systems
+              set number
+              set relativenumber
+              set expandtab
+              set tabstop=2
+              set shiftwidth=2
+              set smartindent
+              set termguicolors
+            '';
+          };
+        };
     in {
+      # Packages for supported systems (x86_64-linux)
       packages = forAllSystems (system: {
-        # Default has everything disabled
         default = (mkNeovimConfig system {}).neovim;
-        
-        # Each specialized build only enables its specific features
         bash = (mkNeovimConfig system { isBash = true; }).neovim;
         java = (mkNeovimConfig system { isJava = true; }).neovim;
         web = (mkNeovimConfig system { isWeb = true; }).neovim;
         python = (mkNeovimConfig system { isPython = true; }).neovim;
         lua = (mkNeovimConfig system { isLua = true; }).neovim;
-        
-        # Full version with everything enabled
         full = (mkNeovimConfig system {
           isBash = true;
           isJava = true;
@@ -67,6 +80,11 @@
           isPython = true;
           isLua = true;
         }).neovim;
-      });
+      }) // {
+        # Basic Neovim configuration for aarch64-linux
+        "aarch64-linux" = {
+          rPi = mkBasicNeovim "aarch64-linux";
+        };
+      };
     };
 }
