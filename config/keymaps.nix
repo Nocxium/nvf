@@ -44,7 +44,7 @@
         desc = "center after C-e";
       }
       {
-        key = "<leader>ng";
+        key = "<leader>gg";
         mode = ["n" ];
         action = ":Neogit<CR>";
         silent = true;
