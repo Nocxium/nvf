@@ -121,6 +121,34 @@
         silent = true;
         desc = "Jump to word";
       }
+      {
+        key = "<C-d>";
+        mode = ["n" ];
+        action = "<cmd><C-d>zz";
+        silent = true;
+        desc = "center after C-d";
+      }
+      {
+        key = "<C-u>";
+        mode = ["n" ];
+        action = "<cmd><C-u>zz";
+        silent = true;
+        desc = "center after C-u";
+      }
+      {
+        key = "<C-e>";
+        mode = ["n" ];
+        action = "<cmd><C-u>zz";
+        silent = true;
+        desc = "center after C-e";
+      }
+      {
+        key = "<leader>ng";
+        mode = ["n" ];
+        action = ":Neogit<CR>";
+        silent = true;
+        desc = "Open Neogit";
+      }
     ];
 
     binds = {
