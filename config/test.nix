@@ -92,6 +92,9 @@
         '';
       };
     };
+    viAlias = true;
+    vimAlias = true;
+    enableEditorconfig = true;
 
     autocomplete.nvim-cmp.enable = true;
     snippets.luasnip.enable = true;
@@ -144,22 +147,22 @@
       # python.enable = isPython;
     };
 
-    # statusline.lualine = {
-    #   enable = true;
-    #   theme = "auto";
-    #   activeSection = {
-    #     z = [
-    #       ''
-    #         {
-    #           require('tmux-status').tmux_windows,
-    #           cond = require('tmux-status').show,
-    #           padding = { left = 3 },
-    #         }
-    #       ''
-    #     ];
-    #   };
-    #   componentSeparator.left = "";
-    # };
+    statusline.lualine = {
+      enable = true;
+      theme = "auto";
+      activeSection = {
+        z = [
+          ''
+            {
+              require('tmux-status').tmux_windows,
+              cond = require('tmux-status').show,
+              padding = { left = 3 },
+            }
+          ''
+        ];
+      };
+      componentSeparator.left = "";
+    };
 
     # lsp = {
     #   lspsaga = {
