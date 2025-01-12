@@ -1,7 +1,10 @@
 {pkgs, ...}:
 {
   config.vim = {
-    extraPackages = with pkgs; [ tmux ];
+    extraPackages = with pkgs; [
+      tmux
+      fira-code-nerdfont
+    ];
     extraPlugins = with pkgs.vimPlugins; {
       telescope-file-browser = {
         package = telescope-file-browser-nvim;
