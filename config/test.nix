@@ -3,7 +3,7 @@
   config.vim = {
     extraPackages = with pkgs; [
       tmux
-      (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+      nerd-fonts.fira-code
     ];
     extraPlugins = with pkgs.vimPlugins; {
       telescope-file-browser = {
