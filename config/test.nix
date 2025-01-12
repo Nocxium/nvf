@@ -122,7 +122,6 @@
       nvim-web-devicons = {
         enable = true;
       };
-      indent-blankline.enable = true;
     };
 
     languages = {
