@@ -18,7 +18,8 @@
       {
         key = "s";
         mode = ["n" ];
-        action = ":lua require('flash').jump()<CR>";
+        lua = true;
+        action = "require('flash').jump";
         silent = true;
         desc = "Jump to word";
       }

@@ -94,7 +94,6 @@
     };
     viAlias = true;
     vimAlias = true;
-    enableEditorconfig = true;
 
     autocomplete.nvim-cmp.enable = true;
     snippets.luasnip.enable = true;
