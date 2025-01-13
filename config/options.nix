@@ -92,6 +92,9 @@
         liveGrep = "<leader>fw";
       };
       setupOpts = {
+        defaults = {
+          path_display = ["truncate"];
+        };
         extensions = {
           file_browser = {
             path = ":%:p:h";
