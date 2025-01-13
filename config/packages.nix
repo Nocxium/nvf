@@ -4,7 +4,6 @@
     extraPackages = with pkgs; [
       ripgrep
       tmux
-      nerd-fonts.fira-code
     ];
   };
 }
