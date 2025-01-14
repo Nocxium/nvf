@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
   config.vim = {
     viAlias = true;
@@ -46,8 +45,10 @@
       enableTreesitter = true;
 
       #LANGUAGES
-      nix.enable = true;
-      # python.enable = isPython;
+      nix = {
+        enable = true;
+        extraDiagnostics.enable = true;
+      };
     };
 
     luaConfigPre =
