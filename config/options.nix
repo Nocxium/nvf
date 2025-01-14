@@ -46,11 +46,6 @@
       enableTreesitter = true;
 
       #LANGUAGES
-      # bash.enable = isBash;
-      # css.enable = isWeb;
-      # html.enable = isWeb;
-      # java.enable = isJava;
-      # lua.enable = isLua;
       nix.enable = true;
       # python.enable = isPython;
     };
@@ -82,15 +77,6 @@
       };
       componentSeparator.left = "";
     };
-
-    # lsp = {
-    #   lspsaga = {
-    #     enable = true;
-    #     mappings = {
-    #       rename = "<leader>lr";
-    #     };
-    #   };
-    # };
 
     ui = {
       borders.enable = true;
