@@ -53,15 +53,6 @@
           isPython = true;
           isLua = true;
         } system).neovim;
-
-        # Raspberry Pi specific package
-        rPi = (mkNeovimConfig {
-          isBash = true;
-          isJava = true;
-          isWeb = true;
-          isPython = true;
-          isLua = true;
-        } "aarch64-linux").neovim;
       });
     };
 }
