@@ -61,6 +61,15 @@
         augroup END
         ]]
       '';
+    
+    utility = {
+      surround = {
+        enable = true;
+        setupOpts.keymaps = {
+          change = "cs";
+        };
+      };
+    };
 
     statusline.lualine = {
       enable = true;
