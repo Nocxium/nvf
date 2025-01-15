@@ -3,23 +3,23 @@
     viAlias = true;
     vimAlias = true;
 
-    autocomplete.nvim-cmp = {
-      enable = true;
-      mappings = {
-      };
-      setupOpts.sorting.comparators = [
-        {
-          _type = "lua-inline";
-          expr = "deprio(kinds.Text)";
-        }
-        "exact"
-        "score"
-        "kind"
-        "length"
-        "sort_text"
-        "offset"
-      ];
-    };
+    # autocomplete.nvim-cmp = {
+    #   enable = true;
+    #   mappings = {
+    #   };
+    #   setupOpts.sorting.comparators = [
+    #     {
+    #       _type = "lua-inline";
+    #       expr = "deprio(kinds.Text)";
+    #     }
+    #     "exact"
+    #     "score"
+    #     "kind"
+    #     "length"
+    #     "sort_text"
+    #     "offset"
+    #   ];
+    # };
     snippets.luasnip.enable = true;
     autopairs.nvim-autopairs.enable = true;
 
@@ -120,7 +120,7 @@
 
     ui = {
       borders.enable = true;
-      # colorizer.enable = true;
+      colorizer.enable = true;
     };
 
     telescope = {
