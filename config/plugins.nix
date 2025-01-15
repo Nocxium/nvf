@@ -25,6 +25,12 @@ in
         '';
       };
 
+      # mini-files = {
+      #   package = mini-files;
+      #   setup = ''
+      #     require('mini.files').setup {opts = {}}
+      #   '';
+      # };
 
       # auto-session = {
       #   package = auto-session;
