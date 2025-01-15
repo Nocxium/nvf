@@ -25,6 +25,7 @@ in
         '';
       };
 
+
       # auto-session = {
       #   package = auto-session;
       #   setup = "require('auto-session').setup {}";
@@ -42,6 +43,11 @@ in
 
       suda = {
         package = vim-suda;
+      };
+
+      colorizer = {
+        package = nvim-colorizer-lua;
+        setup = "require('colorizer').setup {}";
       };
 
       flash-nvim = {

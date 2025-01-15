@@ -120,7 +120,7 @@
 
     ui = {
       borders.enable = true;
-      colorizer.enable = true;
+      # colorizer.enable = true;
     };
 
     telescope = {
