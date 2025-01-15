@@ -68,6 +68,7 @@
       nix = {
         enable = true;
         extraDiagnostics.enable = true;
+        # format.enable = true;
       };
     };
 
