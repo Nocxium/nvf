@@ -42,19 +42,19 @@ in
         setup = "require('neogit').setup {}";
       };
 
-      blink-cmp = {
-        package = blink-cmp;
-        setup = ''
-          require('blink.cmp').setup {
-            keymap = {
-              preset = 'super-tab'
-            }
-          }
-          opts = {
-            snippets = { preset = 'luasnip' },
-          }
-        '';
-      };
+      # blink-cmp = {
+      #   package = blink-cmp;
+      #   setup = ''
+      #     require('blink.cmp').setup {
+      #       keymap = {
+      #         preset = 'super-tab'
+      #       }
+      #     }
+      #     opts = {
+      #       snippets = { preset = 'luasnip' },
+      #     }
+      #   '';
+      # };
       
       oil = {
         package = oil-nvim;
