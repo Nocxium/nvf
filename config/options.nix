@@ -96,6 +96,10 @@
           end,
         }) 
       '';
+
+    notes.orgmode = {
+      enable = true;
+    };
     
     utility = {
       surround = {
