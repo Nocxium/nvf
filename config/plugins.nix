@@ -133,11 +133,11 @@ in
         '';
       };
     };
-    lazy.plugins = {
-      orgmode-nvim = {
-        package = "orgmode-nvim";
-        cmd = ["BufEnter *.org"];
-      };
-    };
+    # lazy.plugins = {
+    #   orgmode-nvim = {
+    #     package = "orgmode-nvim";
+    #     cmd = ["BufEnter *.org"];
+    #   };
+    # };
   };
 }

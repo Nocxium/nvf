@@ -14,7 +14,8 @@
         isJava ? false,
         isWeb ? false,
         isPython ? false,
-        isLua ? false
+        isLua ? false,
+        isOrg ? false
       }: system:
         let
           pkgs = import nixpkgs { inherit system; };
@@ -33,6 +34,7 @@
                   lua.enable = isLua;
                   python.enable = isPython;
                 };
+                notes.orgmode.enable = isOrg;
               };
             }
           ];
@@ -46,12 +48,14 @@
         web = (mkNeovimConfig { isWeb = true; } system).neovim;
         python = (mkNeovimConfig { isPython = true; } system).neovim;
         lua = (mkNeovimConfig { isLua = true; } system).neovim;
+        org = (mkNeovimConfig { isOrg = true; } system).neovim;
         full = (mkNeovimConfig {
           isBash = true;
           isJava = true;
           isWeb = true;
           isPython = true;
           isLua = true;
+          isOrg = true;
         } system).neovim;
       });
     };

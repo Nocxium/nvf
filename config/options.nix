@@ -97,10 +97,6 @@
         }) 
       '';
 
-    notes.orgmode = {
-      enable = true;
-    };
-    
     utility = {
       surround = {
         enable = true;
