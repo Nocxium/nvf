@@ -186,7 +186,7 @@
       lazyredraw = true;
       termguicolors = true;
       # spelllang= "en,cjk,";
-      guifont = "UbuntuMono:h10";
+      guifont = "FiraCode\ NF:h10";
     };
 
   };
