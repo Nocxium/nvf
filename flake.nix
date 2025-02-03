@@ -30,6 +30,7 @@
                   bash.enable = isBash;
                   css.enable = isWeb;
                   html.enable = isWeb;
+                  ts.enable = isWeb;
                   java.enable = isJava;
                   lua.enable = isLua;
                   python.enable = isPython;
