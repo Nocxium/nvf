@@ -6,7 +6,7 @@
       {mode = ["n"];  key = "<leader>fr";  action = ":Telescope oldfiles<CR>";  silent = true;  desc = "File Browser";}
       
       # Small plugins
-      {mode = ["n" ];  key = "s";  lua = true;  action = "require('flash').jump";  silent = true;  desc = "Jump to word";}
+      {mode = ["n" "v"];  key = "s";  lua = true;  action = "require('flash').jump";  silent = true;  desc = "Jump to word";}
       {mode = ["n" ];  key = "<leader>gg";  action = ":Neogit<CR>";  silent = true;  desc = "Open Neogit";}
       {mode = ["n"];  key = "<leader>fr";  action = ":Telescope oldfiles<CR>";  silent = true;  desc = "File Browser";}
       # {mode = ["n"];  key = "<leader>fc";  action = "MiniFiles.open";  silent = true; lua = true;  desc = "File Browser";}
