@@ -47,8 +47,8 @@
 
     theme = {
       enable = true;
-      name = "onedark";
-      style = "warmer";
+      name = "github";
+      style = "dark_default";
       transparent = false;
     };
 
