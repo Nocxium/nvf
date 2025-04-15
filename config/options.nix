@@ -47,8 +47,8 @@
 
     theme = {
       enable = true;
-      name = "github";
-      style = "dark_default";
+      name = "rose-pine";
+      style = "main";
       transparent = false;
     };
 
