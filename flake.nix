@@ -10,7 +10,7 @@
       forAllSystems = f: nixpkgs.lib.genAttrs supportedSystems f;
 
       mkNeovimConfig = { 
-        isBash ? false,
+        # isBash ? false,
         isJava ? false,
         isWeb ? false,
         isPython ? false,
@@ -27,7 +27,7 @@
             {
               config.vim = {
                 languages = {
-                  bash.enable = isBash;
+                  # bash.enable = isBash;
                   css.enable = isWeb;
                   html.enable = isWeb;
                   ts.enable = isWeb;
@@ -44,14 +44,14 @@
     in {
       packages = forAllSystems (system: {
         default = (mkNeovimConfig {} system).neovim;
-        bash = (mkNeovimConfig { isBash = true; } system).neovim;
+        # bash = (mkNeovimConfig { isBash = true; } system).neovim;
         java = (mkNeovimConfig { isJava = true; } system).neovim;
         web = (mkNeovimConfig { isWeb = true; } system).neovim;
         python = (mkNeovimConfig { isPython = true; } system).neovim;
         lua = (mkNeovimConfig { isLua = true; } system).neovim;
         org = (mkNeovimConfig { isOrg = true; } system).neovim;
         full = (mkNeovimConfig {
-          isBash = true;
+          # isBash = true;
           isJava = true;
           isWeb = true;
           isPython = true;

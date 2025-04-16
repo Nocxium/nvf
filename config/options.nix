@@ -75,6 +75,11 @@
         extraDiagnostics.enable = true;
         # format.enable = true;
       };
+      bash = {
+        enable = true;
+        extraDiagnostics.enable = true;
+        # format.enable = true;
+      };
     };
 
     luaConfigPre =
