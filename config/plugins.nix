@@ -37,6 +37,13 @@ in
       #   '';
       # };
 
+      # rose-pine = {
+      #   package = rose-pine;
+      #   setup = ''
+      #     vim.cmd("colorscheme rose-pine")
+      #   '';
+      # };
+
       # blink-cmp = {
       #   package = blink-cmp;
       #   setup = ''
