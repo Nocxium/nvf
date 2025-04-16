@@ -4,30 +4,30 @@
     vimAlias = true;
 
 
-    autocomplete.blink-cmp = {
-      enable = true;
-    };
-
-    # autocomplete.nvim-cmp = {
+    # autocomplete.blink-cmp = {
     #   enable = true;
-    #   mappings = {
-    #     confirm = "<Tab>";
-    #     next = "<C-j>";
-    #     previous = "<C-k>";
-    #   };
-    #   setupOpts.sorting.comparators = [
-    #     {
-    #       _type = "lua-inline";
-    #       expr = "deprio(kinds.Text)";
-    #     }
-    #     "exact"
-    #     "score"
-    #     "kind"
-    #     "length"
-    #     "sort_text"
-    #     "offset"
-    #   ];
     # };
+
+    autocomplete.nvim-cmp = {
+      enable = true;
+      # mappings = {
+      #   confirm = "<Tab>";
+      #   next = "<C-j>";
+      #   previous = "<C-k>";
+      # };
+      setupOpts.sorting.comparators = [
+        {
+          _type = "lua-inline";
+          expr = "deprio(kinds.Text)";
+        }
+        "exact"
+        "score"
+        "kind"
+        "length"
+        "sort_text"
+        "offset"
+      ];
+    };
 
     snippets.luasnip.enable = true;
     autopairs.nvim-autopairs.enable = true;
@@ -106,6 +106,13 @@
           end,
         }) 
       '';
+
+    #luaConfigPost =
+      # lua
+    #  ''
+    #    -- Temp fix tab for cmdline caused by blink
+    #    vim.cmd("cunmap <Tab>")
+    #  '';
 
     utility = {
       surround = {
