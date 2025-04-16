@@ -25,22 +25,17 @@ in
         '';
       };
 
-      # mini-files = {
-      #   package = mini-files;
-      #   setup = ''
-      #     require('mini.files').setup {opts = {}}
-      #   '';
-      # };
-
-      # auto-session = {
-      #   package = auto-session;
-      #   setup = "require('auto-session').setup {}";
-      # };
-
       neogit = {
         package = neogit;
         setup = "require('neogit').setup {}";
       };
+
+      # kanagawa = {
+      #   package = kanagawa-nvim;
+      #   setup = ''
+      #     vim.cmd("colorscheme kanagawa")
+      #   '';
+      # };
 
       # blink-cmp = {
       #   package = blink-cmp;
