@@ -82,6 +82,14 @@
         extraDiagnostics.enable = true;
         lsp = {
           server = "nixd";
+          options = {
+            nixos = {
+              expr = "(builtins.getFlake \"/home/nocxium/.nixconfig\").nixosConfigurations.\"mint\".options";
+            };
+            home_manager = {
+              expr = "(builtins.getFlake \"/home/nocxium/.nixconfig\").homeConfigurations.\"nocxium\".options";
+            };
+          };
         };
         # format.enable = true;
       };
