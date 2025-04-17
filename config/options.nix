@@ -73,6 +73,9 @@
       nix = {
         enable = true;
         extraDiagnostics.enable = true;
+        lsp = {
+          server = "nixd";
+        };
         # format.enable = true;
       };
       bash = {
