@@ -3,7 +3,6 @@
     viAlias = true;
     vimAlias = true;
 
-
     # autocomplete.blink-cmp = {
     #   enable = true;
     # };
@@ -63,11 +62,19 @@
       };
     };
 
+    formatter = {
+      conform-nvim.enable = true;
+    };
+    # diagnostics = {
+    #   nvim-lint.enable = true;
+    # };
+
     languages = {
       # OPTIONS
       # enableDAP = true;
       enableLSP = true;
       enableTreesitter = true;
+      # enableFormat = true;
 
       #LANGUAGES
       nix = {
@@ -110,11 +117,11 @@
               vim.cmd("normal! g`\"")
             end
           end,
-        }) 
+        })
       '';
 
     #luaConfigPost =
-      # lua
+    # lua
     #  ''
     #    -- Temp fix tab for cmdline caused by blink
     #    vim.cmd("cunmap <Tab>")
@@ -210,6 +217,5 @@
       termguicolors = true;
       # spelllang= "en,cjk,";
     };
-
   };
 }
