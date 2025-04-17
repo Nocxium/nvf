@@ -98,7 +98,7 @@
         };
         format = {
           enable = true;
-          type = "nixfmt";
+          # type = "nixfmt";
         };
       };
       bash = {
@@ -181,7 +181,7 @@
       };
       setupOpts = {
         defaults = {
-          path_display = [ "truncate" ];
+          path_display = ["truncate"];
         };
         extensions = {
           file_browser = {
