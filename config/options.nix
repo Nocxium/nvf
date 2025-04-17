@@ -5,6 +5,11 @@
 
     # autocomplete.blink-cmp = {
     #   enable = true;
+    #   setupOpts = {
+    #     cmdline.sources = null;
+    #     cmdline.keymap.preset = "default";
+    #     cmdline.completion.menu.auto_show = true; # not really needed but helps
+    #   };
     # };
 
     autocomplete.nvim-cmp = {
@@ -84,14 +89,17 @@
           server = "nixd";
           # options = {
           #   nixos = {
-          #     expr = "(builtins.getFlake \"/home/nocxium/.nixconfig\").nixosConfigurations.\"mint\".options";
+          #     expr = ''(builtins.getFlake "github:NobbZ/nixos-config").nixosConfigurations.mimas.options'';
           #   };
           #   home_manager = {
-          #     expr = "(builtins.getFlake \"/home/nocxium/.nixconfig\").homeConfigurations.\"nocxium\".options";
+          #     expr = ''(builtins.getFlake "github:NobbZ/nixos-config").homeConfigurations.nmelzer@mimas.options'';
           #   };
           # };
         };
-        # format.enable = true;
+        format = {
+          enable = true;
+          type = "nixfmt";
+        };
       };
       bash = {
         enable = true;
@@ -173,7 +181,7 @@
       };
       setupOpts = {
         defaults = {
-          path_display = ["truncate"];
+          path_display = [ "truncate" ];
         };
         extensions = {
           file_browser = {
