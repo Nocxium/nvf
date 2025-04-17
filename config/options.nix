@@ -83,6 +83,9 @@
         extraDiagnostics.enable = true;
         # format.enable = true;
       };
+      css = {
+        enable = true;
+      };
     };
 
     luaConfigPre =
