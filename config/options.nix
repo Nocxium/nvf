@@ -86,7 +86,7 @@
         enable = true;
         extraDiagnostics.enable = true;
         lsp = {
-          server = "nixd";
+          # server = "nixd";
           # options = {
           #   nixos = {
           #     expr = ''(builtins.getFlake "github:NobbZ/nixos-config").nixosConfigurations.mimas.options'';
@@ -98,7 +98,6 @@
         };
         format = {
           enable = true;
-          # type = "nixfmt";
         };
       };
       bash = {
