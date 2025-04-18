@@ -19,6 +19,9 @@
       #   next = "<C-j>";
       #   previous = "<C-k>";
       # };
+      sourcePlugins = [
+        "cmp-path"
+      ];
       setupOpts.sorting.comparators = [
         {
           _type = "lua-inline";
