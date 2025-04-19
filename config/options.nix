@@ -97,7 +97,7 @@
           #   home_manager = {
           #     expr = ''(builtins.getFlake "github:NobbZ/nixos-config").homeConfigurations.nmelzer@mimas.options'';
           #   };
-          };
+          # };
         };
         format = {
           enable = true;
