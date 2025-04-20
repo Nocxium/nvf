@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-let
+{pkgs, ...}: let
   tmux-status = pkgs.vimUtils.buildVimPlugin {
     name = "tmux-status";
     src = pkgs.fetchFromGitHub {
@@ -10,8 +8,7 @@ let
       hash = "sha256-1qGvLaKgRA0CXldx5k+/3y3Q4ypGs1CwcAPfoenxod8=";
     };
   };
-in
-{
+in {
   config.vim = {
     extraPlugins = with pkgs.vimPlugins; {
       telescope-file-browser = {
@@ -65,7 +62,7 @@ in
       vim-startuptime = {
         package = vim-startuptime;
       };
-      
+
       diffview-nvim = {
         package = diffview-nvim;
       };
@@ -82,7 +79,7 @@ in
       vim-rooter = {
         package = vim-rooter;
         setup = ''
-            vim.g.rooter_patterns = {'>.config', '.git', '.ozz', 'index.md', '>Documents', '>rPiPico', '>Pico', '>dotfiles', '=home-manager', '=nixos', '*.norg'}
+          vim.g.rooter_patterns = {'>.config', '.git', '.ozz', 'index.md', '>Documents', '>rPiPico', '>Pico', '>dotfiles', '=home-manager', '=nixos', '*.norg'}
         '';
       };
 
