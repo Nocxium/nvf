@@ -79,7 +79,7 @@ in {
       vim-rooter = {
         package = vim-rooter;
         setup = ''
-          vim.g.rooter_patterns = {'>.config', '.git', '.ozz', 'index.md', '>Documents', '>rPiPico', '>Pico', '>dotfiles', '=home-manager', '=nixos', '*.norg'}
+          vim.g.rooter_patterns = {'>.config', '.git', '.ozz', 'index.md', '>Documents', '>rPiPico', '>Pico', '=home-manager', 'flake.nix', '*.norg'}
         '';
       };
 
