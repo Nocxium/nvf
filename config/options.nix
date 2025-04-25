@@ -57,12 +57,12 @@
     # Enable custom theming options
     dashboard.dashboard-nvim.enable = true;
 
-    theme = {
-      enable = true;
-      name = "rose-pine";
-      style = "main";
-      transparent = false;
-    };
+    # theme = {
+    #   enable = true;
+    #   name = "onedark";
+    #   style = "darker";
+    #   transparent = false;
+    # };
 
     visuals = {
       nvim-web-devicons = {

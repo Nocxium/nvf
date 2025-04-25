@@ -8,6 +8,25 @@
       hash = "sha256-1qGvLaKgRA0CXldx5k+/3y3Q4ypGs1CwcAPfoenxod8=";
     };
   };
+
+  everforest-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "everforest-nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "neanias";
+      repo = "everforest-nvim";
+      rev = "135cc21a45756e688dd1a3cbeb1c80a04b569b46";
+      hash = "sha256-X+GaH76afaWmszGuLYf9VHP134jvmUCVSB7C7aiPSOs=";
+    };
+  };
+  gruvbox-material = pkgs.vimUtils.buildVimPlugin {
+    name = "gruvbox-material";
+    src = pkgs.fetchFromGitHub {
+      owner = "sainnhe";
+      repo = "gruvbox-material";
+      rev = "f5f912fbc7cf2d45da6928b792d554f85c7aa89a";
+      hash = "sha256-r3a0fhRpEqrAE6QQwBV7DmGoT/YSOhDPl5Nk8evNplE=";
+    };
+  };
 in {
   config.vim = {
     extraPlugins = with pkgs.vimPlugins; {
@@ -22,24 +41,27 @@ in {
         '';
       };
 
+      everforest-nvim = {
+        package = everforest-nvim;
+        setup = ''
+          require("everforest").setup({
+            background = "hard",
+          })
+          vim.cmd("colorscheme everforest")
+        '';
+      };
+
+      # gruvbox-material = {
+      #   package = gruvbox-material;
+      #   setup = ''
+      #     vim.cmd("colorscheme gruvbox-material")
+      #   '';
+      # };
+
       neogit = {
         package = neogit;
         setup = "require('neogit').setup {}";
       };
-
-      # kanagawa = {
-      #   package = kanagawa-nvim;
-      #   setup = ''
-      #     vim.cmd("colorscheme kanagawa")
-      #   '';
-      # };
-
-      # rose-pine = {
-      #   package = rose-pine;
-      #   setup = ''
-      #     vim.cmd("colorscheme rose-pine")
-      #   '';
-      # };
 
       oil = {
         package = oil-nvim;
