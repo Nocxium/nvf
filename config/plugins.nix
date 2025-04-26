@@ -18,13 +18,13 @@
       hash = "sha256-X+GaH76afaWmszGuLYf9VHP134jvmUCVSB7C7aiPSOs=";
     };
   };
-  gruvbox-material = pkgs.vimUtils.buildVimPlugin {
-    name = "gruvbox-material";
+  neomodern-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "neomodern-nvim";
     src = pkgs.fetchFromGitHub {
-      owner = "sainnhe";
-      repo = "gruvbox-material";
-      rev = "f5f912fbc7cf2d45da6928b792d554f85c7aa89a";
-      hash = "sha256-r3a0fhRpEqrAE6QQwBV7DmGoT/YSOhDPl5Nk8evNplE=";
+      owner = "cdmill";
+      repo = "neomodern.nvim";
+      rev = "fd65a4b35820f6d689a04bc3e02384b76beca477";
+      hash = "sha256-txlOvpmDWeWY62Aw3IMG0mN8rdUQTVuju4lGWIEpV5E=";
     };
   };
 in {
@@ -41,22 +41,24 @@ in {
         '';
       };
 
-      everforest-nvim = {
-        package = everforest-nvim;
-        setup = ''
-          require("everforest").setup({
-            background = "hard",
-          })
-          vim.cmd("colorscheme everforest")
-        '';
-      };
-
-      # gruvbox-material = {
-      #   package = gruvbox-material;
+      # everforest-nvim = {
+      #   package = everforest-nvim;
       #   setup = ''
-      #     vim.cmd("colorscheme gruvbox-material")
+      #     require("everforest").setup({
+      #       background = "hard",
+      #     })
+      #     vim.cmd("colorscheme everforest")
       #   '';
       # };
+
+      neomodern-nvim = {
+        package = neomodern-nvim;
+        setup = ''
+          require("neomodern").setup({
+          })
+          require("neomodern").load()
+        '';
+      };
 
       neogit = {
         package = neogit;
