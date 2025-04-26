@@ -118,10 +118,10 @@
       ''
         -- Highlight on yank
         vim.cmd[[
-        augroup highlight_yank
-        autocmd!
-        au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", timeout=200})
-        augroup END
+          augroup highlight_yank
+              autocmd!
+              autocmd TextYankPost * silent! lua vim.highlight.on_yank { higroup="IncSearch", timeout=200 }
+          augroup END
         ]]
 
         -- Save Cursor Position on file, after exiting

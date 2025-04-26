@@ -18,15 +18,6 @@
       hash = "sha256-NY4kjeq01sMTg1PZeVVa2Vle4KpLwWEv4y34cDQ6JMU=";
     };
   };
-  neomodern-nvim = pkgs.vimUtils.buildVimPlugin {
-    name = "neomodern-nvim";
-    src = pkgs.fetchFromGitHub {
-      owner = "cdmill";
-      repo = "neomodern.nvim";
-      rev = "fd65a4b35820f6d689a04bc3e02384b76beca477";
-      hash = "sha256-txlOvpmDWeWY62Aw3IMG0mN8rdUQTVuju4lGWIEpV5E=";
-    };
-  };
 in {
   config.vim = {
     extraPlugins = with pkgs.vimPlugins; {
@@ -48,20 +39,15 @@ in {
           lua
           */
           ''
-            -- require("nordic").setup({
-            -- })
+            require('nordic').setup({
+              cursorline = {
+                -- Available styles: 'dark', 'light'.
+                theme = 'dark',
+              },
+            })
             vim.cmd.colorscheme('nordic')
           '';
       };
-
-      # neomodern-nvim = {
-      #   package = neomodern-nvim;
-      #   setup = ''
-      #     require("neomodern").setup({
-      #     })
-      #     require("neomodern").load()
-      #   '';
-      # };
 
       neogit = {
         package = neogit;
@@ -86,10 +72,6 @@ in {
         package = flash-nvim;
       };
 
-      vim-startuptime = {
-        package = vim-startuptime;
-      };
-
       diffview-nvim = {
         package = diffview-nvim;
       };
@@ -112,37 +94,41 @@ in {
 
       tabby = {
         package = tabby-nvim;
-        setup = ''
-          local theme = {
-            fill = "TabLineFill",
-            -- Also you can do this: fill = { fg='#f2e9de', bg='#907aa9', style='italic' }
-            head = "TabLine",
-            current_tab = { fg = "#181825", bg = "#cdd6f4" },
-            tab = "TabLine",
-            win = { fg = "#181825", bg = "#f5e0dc" },
-            tail = "TabLine",
-          }
-          require("tabby.tabline").set(function(line)
-            return {
-              {
-                { "  ", hl = theme.head },
-                line.sep("", theme.head, theme.fill),
-              },
-              line.tabs().foreach(function(tab)
-                local hl = tab.is_current() and theme.current_tab or theme.tab
-                return {
-                  line.sep("", hl, theme.fill),
-                  tab.is_current() and "" or "",
-                  tab.number(),
-                  tab.close_btn(""),
-                  line.sep("", hl, theme.fill),
-                  hl = hl,
-                  margin = " ",
-                }
-              end),
+        setup =
+          /*
+          lua
+          */
+          ''
+            local theme = {
+              fill = "TabLineFill",
+              -- Also you can do this: fill = { fg='#f2e9de', bg='#907aa9', style='italic' }
+              head = "TabLine",
+              current_tab = { fg = "#181825", bg = "#cdd6f4" },
+              tab = "TabLine",
+              win = { fg = "#181825", bg = "#f5e0dc" },
+              tail = "TabLine",
             }
-          end)
-        '';
+            require("tabby.tabline").set(function(line)
+              return {
+                {
+                  { "  ", hl = theme.head },
+                  line.sep("", theme.head, theme.fill),
+                },
+                line.tabs().foreach(function(tab)
+                  local hl = tab.is_current() and theme.current_tab or theme.tab
+                  return {
+                    line.sep("", hl, theme.fill),
+                    tab.is_current() and "" or "",
+                    tab.number(),
+                    tab.close_btn(""),
+                    line.sep("", hl, theme.fill),
+                    hl = hl,
+                    margin = " ",
+                  }
+                end),
+              }
+            end)
+          '';
       };
     };
     # lazy.plugins = {
