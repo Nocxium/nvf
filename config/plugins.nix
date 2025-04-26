@@ -9,13 +9,13 @@
     };
   };
 
-  everforest-nvim = pkgs.vimUtils.buildVimPlugin {
-    name = "everforest-nvim";
+  nordic-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "nordic-nvim";
     src = pkgs.fetchFromGitHub {
-      owner = "neanias";
-      repo = "everforest-nvim";
-      rev = "135cc21a45756e688dd1a3cbeb1c80a04b569b46";
-      hash = "sha256-X+GaH76afaWmszGuLYf9VHP134jvmUCVSB7C7aiPSOs=";
+      owner = "AlexvZyl";
+      repo = "nordic.nvim";
+      rev = "6afe957722fb1b0ec7ca5fbea5a651bcca55f3e1";
+      hash = "sha256-NY4kjeq01sMTg1PZeVVa2Vle4KpLwWEv4y34cDQ6JMU=";
     };
   };
   neomodern-nvim = pkgs.vimUtils.buildVimPlugin {
@@ -41,24 +41,27 @@ in {
         '';
       };
 
-      # everforest-nvim = {
-      #   package = everforest-nvim;
+      nordic-nvim = {
+        package = nordic-nvim;
+        setup =
+          /*
+          lua
+          */
+          ''
+            -- require("nordic").setup({
+            -- })
+            vim.cmd.colorscheme('nordic')
+          '';
+      };
+
+      # neomodern-nvim = {
+      #   package = neomodern-nvim;
       #   setup = ''
-      #     require("everforest").setup({
-      #       background = "hard",
+      #     require("neomodern").setup({
       #     })
-      #     vim.cmd("colorscheme everforest")
+      #     require("neomodern").load()
       #   '';
       # };
-
-      neomodern-nvim = {
-        package = neomodern-nvim;
-        setup = ''
-          require("neomodern").setup({
-          })
-          require("neomodern").load()
-        '';
-      };
 
       neogit = {
         package = neogit;
