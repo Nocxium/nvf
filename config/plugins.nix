@@ -18,6 +18,15 @@
       hash = "sha256-NY4kjeq01sMTg1PZeVVa2Vle4KpLwWEv4y34cDQ6JMU=";
     };
   };
+  # direnv-nvim = pkgs.vimUtils.buildVimPlugin {
+  #   name = "direnv-nvim";
+  #   src = pkgs.fetchFromGitHub {
+  #     owner = "actionshrimp";
+  #     repo = "direnv.nvim";
+  #     rev = "eec36a38285457c4e5dea2c6856329a9a20bd3a4";
+  #     hash = "sha256-7NcVskgAurbIuEVIXxHvXZfYQBOEXLURGzllfVEQKNE=";
+  #   };
+  # };
 in {
   config.vim = {
     extraPlugins = with pkgs.vimPlugins; {
