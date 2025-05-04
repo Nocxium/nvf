@@ -77,10 +77,10 @@
     #   nvim-lint.enable = true;
     # };
 
+    lsp.enable = true;
     languages = {
       # OPTIONS
       # enableDAP = true;
-      enableLSP = true;
       enableTreesitter = true;
       # enableFormat = true;
 
