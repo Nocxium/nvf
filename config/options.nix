@@ -5,39 +5,25 @@
 
     # autocomplete.blink-cmp = {
     #   enable = true;
-    #   setupOpts = {
-    #     cmdline.sources = null;
-    #     cmdline.keymap.preset = "default";
-    #     cmdline.completion.menu.auto_show = true; # not really needed but helps
-    #   };
     # };
-
-    autocomplete.blink-cmp = {
+    autocomplete.nvim-cmp = {
       enable = true;
+      sourcePlugins = [
+        "cmp-path"
+      ];
+      setupOpts.sorting.comparators = [
+        {
+          _type = "lua-inline";
+          expr = "deprio(kinds.Text)";
+        }
+        "exact"
+        "score"
+        "kind"
+        "length"
+        "sort_text"
+        "offset"
+      ];
     };
-    # autocomplete.nvim-cmp = {
-    #   enable = true;
-    #   # mappings = {
-    #   #   confirm = "<Tab>";
-    #   #   next = "<C-j>";
-    #   #   previous = "<C-k>";
-    #   # };
-    #   sourcePlugins = [
-    #     "cmp-path"
-    #   ];
-    #   setupOpts.sorting.comparators = [
-    #     {
-    #       _type = "lua-inline";
-    #       expr = "deprio(kinds.Text)";
-    #     }
-    #     "exact"
-    #     "score"
-    #     "kind"
-    #     "length"
-    #     "sort_text"
-    #     "offset"
-    #   ];
-    # };
 
     snippets.luasnip.enable = true;
     autopairs.nvim-autopairs.enable = true;
