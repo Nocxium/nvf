@@ -8,6 +8,10 @@
       sourcePlugins = [
         "cmp-path"
       ];
+      sources = {
+        buffer = "[Buffer]";
+        path = "[Path]";
+      };
       setupOpts.sorting.comparators = [
         {
           _type = "lua-inline";

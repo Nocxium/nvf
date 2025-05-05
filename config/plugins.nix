@@ -81,17 +81,6 @@ in {
         package = flash-nvim;
       };
 
-      cmp-path = {
-        package = cmp-path;
-        setup = ''
-          require('cmp').setup {
-            sources = {
-              { name = 'path' }
-            }
-          }
-        '';
-      };
-
       diffview-nvim = {
         package = diffview-nvim;
       };
