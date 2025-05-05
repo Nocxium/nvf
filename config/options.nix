@@ -12,29 +12,32 @@
     #   };
     # };
 
-    autocomplete.nvim-cmp = {
+    autocomplete.blink-cmp = {
       enable = true;
-      # mappings = {
-      #   confirm = "<Tab>";
-      #   next = "<C-j>";
-      #   previous = "<C-k>";
-      # };
-      sourcePlugins = [
-        "cmp-path"
-      ];
-      setupOpts.sorting.comparators = [
-        {
-          _type = "lua-inline";
-          expr = "deprio(kinds.Text)";
-        }
-        "exact"
-        "score"
-        "kind"
-        "length"
-        "sort_text"
-        "offset"
-      ];
     };
+    # autocomplete.nvim-cmp = {
+    #   enable = true;
+    #   # mappings = {
+    #   #   confirm = "<Tab>";
+    #   #   next = "<C-j>";
+    #   #   previous = "<C-k>";
+    #   # };
+    #   sourcePlugins = [
+    #     "cmp-path"
+    #   ];
+    #   setupOpts.sorting.comparators = [
+    #     {
+    #       _type = "lua-inline";
+    #       expr = "deprio(kinds.Text)";
+    #     }
+    #     "exact"
+    #     "score"
+    #     "kind"
+    #     "length"
+    #     "sort_text"
+    #     "offset"
+    #   ];
+    # };
 
     snippets.luasnip.enable = true;
     autopairs.nvim-autopairs.enable = true;
@@ -78,11 +81,11 @@
     # };
 
     lsp.enable = true;
+    treesitter.enable = true;
     languages = {
       # OPTIONS
-      # enableDAP = true;
-      enableTreesitter = true;
-      # enableFormat = true;
+      enableDAP = true;
+      enableFormat = true;
 
       #LANGUAGES
       nix = {
@@ -110,6 +113,14 @@
       };
       css = {
         enable = true;
+      };
+
+      rust = {
+        enable = true;
+        crates = {
+          enable = true;
+          codeActions = true;
+        };
       };
     };
 
