@@ -1,8 +1,5 @@
 {
   config.vim = {
-    viAlias = true;
-    vimAlias = true;
-
     # autocomplete.blink-cmp = {
     #   enable = true;
     # };
