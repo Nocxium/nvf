@@ -1,34 +1,5 @@
 {
   config.vim = {
-    # autocomplete.blink-cmp = {
-    #   enable = true;
-    # };
-    autocomplete.nvim-cmp = {
-      enable = true;
-      sourcePlugins = [
-        "cmp-path"
-      ];
-      sources = {
-        buffer = "[Buffer]";
-        path = "[Path]";
-      };
-      setupOpts.sorting.comparators = [
-        {
-          _type = "lua-inline";
-          expr = "deprio(kinds.Text)";
-        }
-        "exact"
-        "score"
-        "kind"
-        "length"
-        "sort_text"
-        "offset"
-      ];
-    };
-
-    snippets.luasnip.enable = true;
-    autopairs.nvim-autopairs.enable = true;
-
     git = {
       enable = true;
       gitsigns.enable = true;
@@ -40,109 +11,6 @@
       codewindow.enable = true; # lighter, faster, and uses lua for configuration
     };
 
-    binds = {
-      whichKey.enable = true;
-    };
-
-    # Enable custom theming options
-    dashboard.dashboard-nvim.enable = true;
-
-    theme = {
-      enable = true;
-      name = "onedark";
-      style = "darker";
-      transparent = false;
-    };
-
-    visuals = {
-      nvim-web-devicons = {
-        enable = true;
-      };
-    };
-
-    formatter = {
-      conform-nvim.enable = true;
-    };
-    # diagnostics = {
-    #   nvim-lint.enable = true;
-    # };
-
-    lsp.enable = true;
-    treesitter.enable = true;
-    languages = {
-      # OPTIONS
-      enableDAP = true;
-      enableFormat = true;
-
-      #LANGUAGES
-      nix = {
-        enable = true;
-        extraDiagnostics.enable = true;
-        lsp = {
-          server = "nixd";
-          # options = {
-          #   nixos = {
-          #     expr = ''(builtins.getFlake "github:NobbZ/nixos-config").nixosConfigurations.mimas.options'';
-          #   };
-          #   home_manager = {
-          #     expr = ''(builtins.getFlake "github:NobbZ/nixos-config").homeConfigurations.nmelzer@mimas.options'';
-          #   };
-          # };
-        };
-        format = {
-          enable = true;
-        };
-      };
-      bash = {
-        enable = true;
-        extraDiagnostics.enable = true;
-        # format.enable = true;
-      };
-      css = {
-        enable = true;
-      };
-
-      rust = {
-        enable = true;
-        crates = {
-          enable = true;
-          codeActions = true;
-        };
-      };
-    };
-
-    luaConfigPre =
-      # lua
-      ''
-        -- Highlight on yank
-        vim.cmd[[
-          augroup highlight_yank
-              autocmd!
-              autocmd TextYankPost * silent! lua vim.highlight.on_yank { higroup="IncSearch", timeout=200 }
-          augroup END
-        ]]
-
-        -- Save Cursor Position on file, after exiting
-        vim.api.nvim_create_autocmd("BufReadPost", {
-          desc = "Go To The Last Cursor Position",
-          callback = function()
-            local last_pos = vim.fn.line("'\"")
-            local last_line = vim.fn.line("$")
-
-            if last_pos > 1 and last_pos <= last_line then
-              vim.cmd("normal! g`\"")
-            end
-          end,
-        })
-      '';
-
-    #luaConfigPost =
-    # lua
-    #  ''
-    #    -- Temp fix tab for cmdline caused by blink
-    #    vim.cmd("cunmap <Tab>")
-    #  '';
-
     utility = {
       surround = {
         enable = true;
@@ -152,51 +20,8 @@
       };
     };
 
-    statusline.lualine = {
-      enable = true;
-      theme = "auto";
-      activeSection = {
-        z = [
-          ''
-            {
-              require('tmux-status').tmux_windows,
-              cond = require('tmux-status').show,
-              padding = { left = 3 },
-            }
-          ''
-        ];
-      };
-      componentSeparator.left = "";
-    };
-
-    ui = {
-      borders.enable = true;
-      colorizer.enable = true;
-    };
-
-    telescope = {
-      enable = true;
-      mappings = {
-        liveGrep = "<leader>fw";
-      };
-      setupOpts = {
-        defaults = {
-          path_display = ["truncate"];
-        };
-        extensions = {
-          file_browser = {
-            path = ":%:p:h";
-            cwd_to_path = true;
-            initial_mode = "normal";
-          };
-        };
-      };
-    };
-    treesitter = {
-      context.enable = true;
-    };
-
     useSystemClipboard = true;
+    undoFile.enable = true;
 
     options = {
       backup = false;
@@ -215,7 +40,6 @@
       splitright = true;
       swapfile = true;
       timeoutlen = 500;
-      undofile = true;
       updatetime = 250;
       writebackup = false;
       expandtab = true;

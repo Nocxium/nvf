@@ -1,5 +1,8 @@
 {
   config.vim = {
+    binds = {
+      whichKey.enable = true;
+    };
     keymaps = [
       # Telescope
       {
@@ -32,13 +35,6 @@
         action = ":Neogit<CR>";
         silent = true;
         desc = "Open Neogit";
-      }
-      {
-        mode = ["n"];
-        key = "<leader>fr";
-        action = ":Telescope oldfiles<CR>";
-        silent = true;
-        desc = "File Browser";
       }
       # {mode = ["n"];  key = "<leader>fc";  action = "MiniFiles.open";  silent = true; lua = true;  desc = "File Browser";}
 

@@ -1,8 +1,17 @@
 {
   imports = [
-    ./options.nix
+    # ./alpha-test.nix
+    ./autocomplete.nix
+    ./formatter.nix
     ./keymaps.nix
-    ./plugins.nix
+    ./languages.nix
+    ./lsp.nix
+    ./luaconfig.nix
+    ./options.nix
     ./packages.nix
+    ./plugins.nix
+    ./telescope.nix
+    ./theme.nix
+    ./treesitter.nix
   ];
 }
