@@ -6,20 +6,26 @@
     keymaps = [
       # Telescope
       {
-        mode = ["n"];
+        mode = ["n" "v"];
         key = "<leader>fe";
         action = ":Telescope file_browser<CR>";
         desc = "File Browser";
         silent = true;
       }
       {
-        mode = ["n"];
+        mode = ["n" "v"];
         key = "<leader>fr";
         action = ":Telescope oldfiles<CR>";
         silent = true;
-        desc = "File Browser";
+        desc = "Recent Files";
       }
-
+      {
+        mode = ["n" "v"];
+        key = "<leader>fu";
+        action = ":Telescope undo<CR>";
+        silent = true;
+        desc = "Undo View";
+      }
       # Small plugins
       {
         mode = ["n" "v"];
