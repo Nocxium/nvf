@@ -17,6 +17,8 @@
       };
     };
 
+    lazy.plugins.telescope.lazy = false;
+
     telescope = {
       enable = true;
       mappings = {
