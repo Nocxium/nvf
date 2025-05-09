@@ -1,5 +1,8 @@
 {
   config.vim = {
+    snippets.luasnip.enable = true;
+    autopairs.nvim-autopairs.enable = true;
+
     autocomplete.nvim-cmp = {
       enable = true;
       sourcePlugins = [
@@ -23,7 +26,22 @@
       ];
     };
 
-    snippets.luasnip.enable = true;
-    autopairs.nvim-autopairs.enable = true;
+    # autocomplete.blink-cmp = {
+    #   enable = true;
+    #   friendly-snippets.enable = true;
+    #   sourcePlugins = {
+    #     ripgrep.enable = true;
+    #   };
+    #   setupOpts = {
+    #     sources = {
+    #       default = [
+    #         "lsp"
+    #         "path"
+    #         "snippets"
+    #         "buffer"
+    #       ];
+    #     };
+    #   };
+    # };
   };
 }

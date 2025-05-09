@@ -18,6 +18,7 @@
       isWeb ? false,
       isPython ? false,
       isLua ? false,
+      isCsharp ? false,
       isOrg ? false,
     }: system: let
       pkgs = import nixpkgs {inherit system;};
@@ -35,6 +36,7 @@
                 java.enable = isJava;
                 lua.enable = isLua;
                 python.enable = isPython;
+                csharp.enable = isCsharp;
               };
               notes.orgmode.enable = isOrg;
             };
@@ -49,6 +51,7 @@
       web = (mkNeovimConfig {isWeb = true;} system).neovim;
       python = (mkNeovimConfig {isPython = true;} system).neovim;
       lua = (mkNeovimConfig {isLua = true;} system).neovim;
+      csharp = (mkNeovimConfig {isCsharp = true;} system).neovim;
       org = (mkNeovimConfig {isOrg = true;} system).neovim;
       full =
         (mkNeovimConfig {
@@ -57,6 +60,7 @@
             isWeb = true;
             isPython = true;
             isLua = true;
+            isCsharp = true;
             isOrg = true;
           }
           system)

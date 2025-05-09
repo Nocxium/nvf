@@ -3,11 +3,11 @@
     # OPTIONS
     enableDAP = true;
     enableFormat = true;
+    enableExtraDiagnostics = true;
 
     #LANGUAGES
     nix = {
       enable = true;
-      extraDiagnostics.enable = true;
       lsp = {
         server = "nixd";
       };
@@ -17,19 +17,10 @@
     };
     bash = {
       enable = true;
-      extraDiagnostics.enable = true;
       # format.enable = true;
     };
     css = {
       enable = true;
-    };
-
-    rust = {
-      enable = true;
-      crates = {
-        enable = true;
-        codeActions = true;
-      };
     };
   };
 }

@@ -53,6 +53,12 @@ in {
                 -- Available styles: 'dark', 'light'.
                 theme = 'dark',
               },
+              -- on_palette = function(palette)
+                 -- palette.black0 = "#14171D"  -- new, darkest tone
+                 -- palette.black1 = "#191D24"  -- was black0
+                 -- palette.black2 = "#1E222A"  -- was black1
+                 -- palette.gray0  = "#222630"  -- was black2
+              -- end,
             })
             vim.cmd.colorscheme('nordic')
           '';

@@ -1,6 +1,6 @@
 {
   imports = [
-    # ./alpha-test.nix
+    ./alpha-test.nix
     ./autocomplete.nix
     ./formatter.nix
     ./keymaps.nix
