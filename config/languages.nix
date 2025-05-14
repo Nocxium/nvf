@@ -1,4 +1,4 @@
-{
+{isCsharp, ...}: {
   config.vim.languages = {
     # OPTIONS
     enableDAP = true;
@@ -21,6 +21,10 @@
     };
     css = {
       enable = true;
+    };
+
+    csharp = {
+      lsp.server = "omnisharp";
     };
   };
 }

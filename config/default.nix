@@ -1,7 +1,8 @@
 {
   imports = [
-    ./alpha-test.nix
+    # ./alpha-test.nix
     ./autocomplete.nix
+    ./diagnostics.nix
     ./formatter.nix
     ./keymaps.nix
     ./languages.nix
