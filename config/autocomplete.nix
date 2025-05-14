@@ -1,4 +1,5 @@
 {
+  # test
   config.vim = {
     snippets.luasnip.enable = true;
     autopairs.nvim-autopairs.enable = true;
