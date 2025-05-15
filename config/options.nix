@@ -20,6 +20,7 @@
       };
     };
 
+    vimAlias = false;
     useSystemClipboard = true;
     undoFile.enable = true;
 
