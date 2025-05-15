@@ -3,7 +3,6 @@
     extraPackages = with pkgs; [
       ripgrep
       tmux
-      vimgolf
     ];
   };
 }
