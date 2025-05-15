@@ -18,6 +18,16 @@
       hash = "sha256-NY4kjeq01sMTg1PZeVVa2Vle4KpLwWEv4y34cDQ6JMU=";
     };
   };
+
+  golf = pkgs.vimUtils.buildVimPlugin {
+    name = "golf";
+    src = pkgs.fetchFromGitHub {
+      owner = "vuciv";
+      repo = "golf";
+      rev = "abf1bc0c1c4a5482b4a4b36b950b49aaa0f39e69";
+      hash = "sha256-lCzt+7/uZ/vvWnvWPIqjtS3G3w3qOhI7vHdSQ9bvMKU=";
+    };
+  };
   # direnv-nvim = pkgs.vimUtils.buildVimPlugin {
   #   name = "direnv-nvim";
   #   src = pkgs.fetchFromGitHub {
@@ -98,6 +108,10 @@ in {
       harpoon = {
         package = harpoon;
         setup = "require('harpoon').setup {}";
+      };
+
+      golf = {
+        package = golf;
       };
 
       vim-rooter = {
