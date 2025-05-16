@@ -93,6 +93,11 @@ in {
         setup = "require('colorizer').setup {}";
       };
 
+      hardtime-nvim = {
+        package = hardtime-nvim;
+        setup = "require('hardtime').setup()";
+      };
+
       flash-nvim = {
         package = flash-nvim;
       };

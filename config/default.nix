@@ -8,6 +8,7 @@
     ./languages.nix
     ./lsp.nix
     ./luaconfig.nix
+    ./notify.nix
     ./options.nix
     ./packages.nix
     ./plugins.nix
