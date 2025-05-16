@@ -95,7 +95,13 @@ in {
 
       hardtime-nvim = {
         package = hardtime-nvim;
-        setup = "require('hardtime').setup()";
+        setup = ''
+          require('hardtime').setup({
+            disabled_keys = {
+              [""] = "",""
+            },
+          })
+        '';
       };
 
       nui-nvim = {
