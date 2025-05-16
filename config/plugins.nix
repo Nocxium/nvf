@@ -98,6 +98,10 @@ in {
         setup = "require('hardtime').setup()";
       };
 
+      nui-nvim = {
+        package = nui-nvim;
+      };
+
       flash-nvim = {
         package = flash-nvim;
       };
