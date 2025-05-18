@@ -1,12 +1,12 @@
 {
   config.vim = {
     dashboard.dashboard-nvim.enable = true;
-    theme = {
-      enable = true;
-      name = "onedark";
-      style = "darker";
-      transparent = false;
-    };
+    # theme = {
+    #   enable = true;
+    #   name = "rose-pine";
+    #   style = "moon";
+    #   transparent = false;
+    # };
 
     visuals = {
       nvim-web-devicons = {
