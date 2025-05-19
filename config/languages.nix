@@ -14,13 +14,16 @@
       format = {
         enable = true;
       };
+      treesitter.enable = true;
     };
     bash = {
       enable = true;
       # format.enable = true;
+      treesitter.enable = true;
     };
     css = {
       enable = true;
+      treesitter.enable = true;
     };
 
     csharp = {
