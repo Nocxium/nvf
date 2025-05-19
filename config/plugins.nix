@@ -111,6 +111,11 @@ in {
         package = nui-nvim;
       };
 
+      neogen = {
+        package = neogen;
+        setup = "require('neogen').setup {}";
+      };
+
       flash-nvim = {
         package = flash-nvim;
       };
