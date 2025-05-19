@@ -36,6 +36,21 @@
         desc = "Jump to word";
       }
       {
+        mode = ["n" "v"];
+        key = "<C-s>";
+        action = ":lua require('flash').treesitter()<CR>";
+        silent = true;
+        desc = "Jump to word";
+      }
+      {
+        mode = ["n" "v"];
+        key = "S";
+        lua = true;
+        action = "require('flash').treesitter_search";
+        silent = true;
+        desc = "Jump to word";
+      }
+      {
         mode = ["n"];
         key = "<leader>gg";
         action = ":Neogit<CR>";

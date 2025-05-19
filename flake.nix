@@ -32,11 +32,17 @@
               languages = {
                 # bash.enable = isBash;
                 html.enable = isWeb;
+                html.treesitter.enable = isWeb;
                 ts.enable = isWeb;
+                ts.treesitter.enable = isWeb;
                 java.enable = isJava;
+                java.treesitter.enable = isJava;
                 lua.enable = isLua;
+                lua.treesitter.enable = isLua;
                 python.enable = isPython;
+                python.treesitter.enable = isPython;
                 csharp.enable = isCsharp;
+                csharp.treesitter.enable = isCsharp;
               };
               notes.orgmode.enable = isOrg;
             };
