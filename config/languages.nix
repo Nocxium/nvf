@@ -1,33 +1,50 @@
-{isCsharp, ...}: {
-  config.vim.languages = {
-    # OPTIONS
-    enableDAP = true;
-    enableFormat = true;
-    enableExtraDiagnostics = true;
-
-    #LANGUAGES
-    nix = {
-      enable = true;
-      lsp = {
-        server = "nixd";
+{pkgs, ...}: {
+  config.vim = {
+    extraPlugins = with pkgs.vimPlugins; {
+      autolist = {
+        package = autolist-nvim;
+        setup = ''
+          ft = {
+              "markdown",
+              "text",
+              "tex",
+              "plaintex",
+              "norg",
+          },
+          require("autolist").setup()
+        '';
       };
-      format = {
+      markview = {
+        package = markview-nvim;
+      };
+    };
+
+    languages = {
+      # OPTIONS
+      enableDAP = true;
+      enableFormat = true;
+      enableExtraDiagnostics = true;
+
+      #LANGUAGES
+      nix = {
         enable = true;
+        lsp = {
+          server = "nixd";
+        };
+        format = {
+          enable = true;
+        };
+        treesitter.enable = true;
       };
-      treesitter.enable = true;
-    };
-    bash = {
-      enable = true;
-      # format.enable = true;
-      treesitter.enable = true;
-    };
-    css = {
-      enable = true;
-      treesitter.enable = true;
-    };
-
-    csharp = {
-      lsp.server = "omnisharp";
+      bash = {
+        enable = true;
+        # format.enable = true;
+        treesitter.enable = true;
+      };
+      css = {
+        enable = true;
+        treesitter.enable = true;
+      };
     };
   };
 }

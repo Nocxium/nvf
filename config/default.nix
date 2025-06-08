@@ -12,6 +12,7 @@
     ./options.nix
     ./packages.nix
     ./plugins.nix
+    ./runtime.nix
     ./telescope.nix
     ./theme.nix
     ./treesitter.nix
