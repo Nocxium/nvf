@@ -49,13 +49,6 @@
         silent = true;
       }
       {
-        mode = ["n"];
-        key = "<C-r>";
-        action = "<cmd>AutolistRecalculate<CR>";
-        desc = "Autolist recalculate list";
-        silent = true;
-      }
-      {
         mode = ["n" "v"];
         key = "<leader>fe";
         action = ":Telescope file_browser<CR>";

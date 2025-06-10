@@ -20,7 +20,12 @@ in {
     #     };
     #   };
     # };
-    # notes = {
+    notes = {
+      orgmode = {
+        enable = true;
+        treesitter.enable = true;
+      };
+    };
     #   neorg = {
     #     enable = true;
     #     treesitter.enable = true;

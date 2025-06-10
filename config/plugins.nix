@@ -184,8 +184,8 @@ in {
       };
     };
     # lazy.plugins = {
-    #   orgmode-nvim = {
-    #     package = "orgmode-nvim";
+    #   orgmode = {
+    #     package = "orgmode";
     #     cmd = ["BufEnter *.org"];
     #   };
     # };
