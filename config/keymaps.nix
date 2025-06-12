@@ -5,49 +5,6 @@
     };
     keymaps = [
       # Telescope
-
-      {
-        mode = ["i"];
-        key = "<Tab>";
-        action = "<cmd>AutolistTab<CR>";
-        desc = "Autolist indent";
-        silent = true;
-      }
-      {
-        mode = ["i"];
-        key = "<S-Tab>";
-        action = "<cmd>AutolistShiftTab<CR>";
-        desc = "Autolist outdent";
-        silent = true;
-      }
-      {
-        mode = ["i"];
-        key = "<CR>";
-        action = "<CR><cmd>AutolistNewBullet<CR>";
-        desc = "Autolist new bullet (insert)";
-        silent = true;
-      }
-      {
-        mode = ["n"];
-        key = "o";
-        action = "o<cmd>AutolistNewBullet<CR>";
-        desc = "Autolist new bullet (normal)";
-        silent = true;
-      }
-      {
-        mode = ["n"];
-        key = "O";
-        action = "O<cmd>AutolistNewBulletBefore<CR>";
-        desc = "Autolist new bullet before";
-        silent = true;
-      }
-      {
-        mode = ["n"];
-        key = "<CR>";
-        action = "<cmd>AutolistToggleCheckbox<CR><CR>";
-        desc = "Autolist toggle checkbox";
-        silent = true;
-      }
       {
         mode = ["n" "v"];
         key = "<leader>fe";

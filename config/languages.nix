@@ -1,19 +1,19 @@
 {pkgs, ...}: {
   config.vim = {
     extraPlugins = with pkgs.vimPlugins; {
-      autolist = {
-        package = autolist-nvim;
-        setup = ''
-          ft = {
-              "markdown",
-              "text",
-              "tex",
-              "plaintex",
-              "norg",
-          },
-          require("autolist").setup()
-        '';
-      };
+      # autolist = {
+      #   package = autolist-nvim;
+      #   setup = ''
+      #     ft = {
+      #         "markdown",
+      #         "text",
+      #         "tex",
+      #         "plaintex",
+      #         "norg",
+      #     },
+      #     require("autolist").setup()
+      #   '';
+      # };
       markview = {
         package = markview-nvim;
       };
