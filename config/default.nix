@@ -2,6 +2,7 @@
   imports = [
     # ./alpha-test.nix
     ./autocomplete.nix
+    ./debugger.nix
     ./diagnostics.nix
     ./formatter.nix
     ./keymaps.nix

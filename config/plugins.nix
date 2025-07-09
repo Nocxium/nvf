@@ -93,19 +93,19 @@ in {
         setup = "require('colorizer').setup {}";
       };
 
-      hardtime-nvim = {
-        package = hardtime-nvim;
-        setup = ''
-          require('hardtime').setup({
-            disabled_keys = {
-              ["<Up>"] = {},
-              ["<Down>"] = {},
-              ["<Left>"] = {},
-              ["<Right>"] = {},
-            },
-          })
-        '';
-      };
+      # hardtime-nvim = {
+      #   package = hardtime-nvim;
+      #   setup = ''
+      #     require('hardtime').setup({
+      #       disabled_keys = {
+      #         ["<Up>"] = {},
+      #         ["<Down>"] = {},
+      #         ["<Left>"] = {},
+      #         ["<Right>"] = {},
+      #       },
+      #     })
+      #   '';
+      # };
 
       nui-nvim = {
         package = nui-nvim;
