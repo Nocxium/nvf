@@ -19,6 +19,16 @@
     };
   };
 
+  mellow-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "mellow.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "mellow-theme";
+      repo = "mellow.nvim";
+      rev = "3894d0d3238a8941f242b88baf3d1cbdb447282e";
+      hash = "sha256-adj0UlnbVxIBVoISxM50rVpXP5QoxF0Op0oBr6hdrRU=";
+    };
+  };
+
   golf = pkgs.vimUtils.buildVimPlugin {
     name = "golf";
     src = pkgs.fetchFromGitHub {
@@ -51,26 +61,37 @@ in {
         '';
       };
 
-      nordic-nvim = {
-        package = nordic-nvim;
+      # nordic-nvim = {
+      #   package = nordic-nvim;
+      #   setup =
+      #     /*
+      #     lua
+      #     */
+      #     ''
+      #       require('nordic').setup({
+      #         cursorline = {
+      #           -- Available styles: 'dark', 'light'.
+      #           theme = 'dark',
+      #         },
+      #         -- on_palette = function(palette)
+      #            -- palette.black0 = "#14171D"  -- new, darkest tone
+      #            -- palette.black1 = "#191D24"  -- was black0
+      #            -- palette.black2 = "#1E222A"  -- was black1
+      #            -- palette.gray0  = "#222630"  -- was black2
+      #         -- end,
+      #       })
+      #       vim.cmd.colorscheme('nordic')
+      #     '';
+      # };
+
+      mellow-nvim = {
+        package = mellow-nvim;
         setup =
           /*
           lua
           */
           ''
-            require('nordic').setup({
-              cursorline = {
-                -- Available styles: 'dark', 'light'.
-                theme = 'dark',
-              },
-              -- on_palette = function(palette)
-                 -- palette.black0 = "#14171D"  -- new, darkest tone
-                 -- palette.black1 = "#191D24"  -- was black0
-                 -- palette.black2 = "#1E222A"  -- was black1
-                 -- palette.gray0  = "#222630"  -- was black2
-              -- end,
-            })
-            vim.cmd.colorscheme('nordic')
+            vim.cmd.colorscheme('mellow')
           '';
       };
 
@@ -83,6 +104,17 @@ in {
         package = oil-nvim;
         setup = "require('oil').setup {}";
       };
+
+      # poimandres-nvim = {
+      #   package = poimandres-nvim;
+      #   setup =
+      #     /*
+      #     lua
+      #     */
+      #     ''
+      #       vim.cmd.colorscheme ('poimandres')
+      #     '';
+      # };
 
       suda = {
         package = vim-suda;
